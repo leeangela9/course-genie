@@ -1,0 +1,152 @@
+body {
+  font-family: monospace;
+  background-color: rgb(222, 231, 202);
+  overflow: hidden;
+}
+.con {
+  display: flex;
+  width: 100%;
+  justify-content: center; /* vertical axis */
+  align-items: center;
+  height: 100vh;
+  /* background-color: RED; */
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  border: 4px rgb(118, 191, 255) solid;
+  border-radius: 16px;
+  background-color: rgb(168, 211, 239);
+  padding: 8px;
+  width: 50%;
+  height: min-content;
+  max-height: 80vh;
+  overflow-y: auto;
+  /* background-color: red; */
+}
+
+.chat-header {
+  text-align: center;
+}
+
+.chat-window {
+  border: 4px rgb(207, 232, 255) solid;
+  border-radius: 8px;
+  padding: 8px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-input {
+  display: flex;
+  width: 100%;
+  gap: 4px;
+  bottom: 0;
+}
+
+.send-btn,
+#id-btn {
+  cursor: pointer;
+  background-color: rgb(122, 164, 226);
+  border-radius: 4px;
+  padding: 8px;
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+}
+
+#id-window {
+  width: 40%;
+  text-align: center;
+}
+
+#id-window > h1 {
+  justify-self: center;
+}
+
+.chat-input > input {
+  border-radius: 4px;
+  border: 1px solid black;
+  font-family: monospace;
+  flex: 19;
+  padding: 4px;
+}
+
+.msg-bub {
+  /* background-color: bisque; */
+  width: fit-content;
+  padding: 8px 4px;
+}
+
+.msg-bub > div {
+  background-color: rgb(121, 232, 195);
+  margin-top: 0;
+  margin-bottom: 4px;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.msg-bub > div > p {
+  display: inline;
+}
+
+.msg-bub > h6 {
+  /* background-color: red; */
+  margin: 0;
+}
+
+.left {
+  align-self: flex-start;
+}
+
+.right {
+  align-self: flex-end;
+}
+
+.radio-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 4px;
+}
+
+.radio-input > p {
+  font-weight: bold;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.radio-btn {
+  background-color: rgb(122, 164, 226);
+  border-radius: 4px;
+  padding: 4px 8px;
+  align-self: flex-end;
+  opacity: 0.5;
+  margin-top: 8px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+#ok-btn {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.radio-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.recs-container {
+  margin-top: 0;
+}
