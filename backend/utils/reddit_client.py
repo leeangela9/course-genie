@@ -4,7 +4,7 @@ import os
 import praw
 from utils.db import get_eligible_courses, get_uncompleted_courses, insert_course_sentiment, insert_post
 from utils.openai_client import get_course_sentiment, get_recommended_courses, summarize_post
-from utils.objects import Post, Comment, Student, Course
+from utils.models import Post, Comment, Student, Course
 import sqlite3
 
 load_dotenv()
@@ -186,5 +186,3 @@ def test_insert_ams_sentiments():
 if __name__ == '__main__':
     # test_insert_ams_sentiments()
     pass
-
-    

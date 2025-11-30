@@ -3,7 +3,7 @@ import sqlite3
 import requests
 from bs4 import BeautifulSoup, NavigableString, Tag
 from utils.db import insert_course, insert_prereq, insert_student, insert_completed_course, get_eligible_courses
-from utils.objects import Course, Major, Student
+from utils.models import Course, Major, Student
 
 def fetch_webpage(url):
     """gets beautifulSoup object of specified webpage"""
@@ -145,25 +145,6 @@ def insert_cc_data(cur):
     insert_completed_course(cur, 1, 'CSE215')
     insert_completed_course(cur, 1, 'CSE216')
     insert_completed_course(cur, 1, 'CSE220')
-
-def db_test():
-    conn = sqlite3.connect("data/new_sbu.db") # if cd is backend
-    cur = conn.cursor()
-
-    cur.connection.row_factory = sqlite3.Row
-
-    angela = Student(1, 'Angela', 'CSE', 'neural networks, web development')
-    insert_student(cur, angela)
-
-    insert_cc_data(cur)
-
-    courses = get_eligible_courses(cur, 1)
-
-    for course in courses:
-        print(course[0])
-
-    conn.commit()
-    conn.close()
 
 if __name__ == "__main__":
     # insert_cse_data()

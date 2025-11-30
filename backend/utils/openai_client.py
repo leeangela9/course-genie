@@ -3,7 +3,7 @@ import openai
 import os
 import textwrap
 
-from utils.objects import Post
+from utils.models import Post
 
 load_dotenv()
 

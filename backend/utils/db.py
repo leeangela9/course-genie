@@ -1,5 +1,5 @@
 import sqlite3
-from utils.objects import Course, Post, Student
+from utils.models import Course, Post, Student
 
 def get_eligible_courses(cur, student_id):
     """returns courses student can take next (all prerequisites completed, not already taken)"""
@@ -14,7 +14,7 @@ def get_eligible_courses(cur, student_id):
                 FROM prerequisites p
                 WHERE p.course_id = c.course_code
                 GROUP BY req_num
-                HAVING SUM(
+                HAVING COUNT(
                     prereq_id IN (
                         SELECT cc.course_id
                         FROM completed_courses cc
